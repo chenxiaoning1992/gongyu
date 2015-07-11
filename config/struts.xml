@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<constant name="struts.devMode" value="ture"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+	
+		<action name="UserAction_*" class="userAction" method="{1}">
+			<result name="addUserPage">/addUserPage.jsp</result>
+			<result>/index.jsp</result>
+			<result name="input">/addUserPage.jsp</result>
+		</action>
+		<action name="EmployeeAction_*" class="employeeAction" method="{1}">
+			<result name="addEmployeePage">/addEmployeePage.jsp</result>
+			<result name="findEmployeePage">/findEmployeePage.jsp</result>
+			<result name="employeeListPage">/employeeListPage.jsp</result>
+			<result>/index.jsp</result>
+			<result name="input">/addEmployeePage.jsp</result>
+		</action>
+		<action name="RoomAction_*" class="roomAction" method="{1}">
+			<result name="addRoomPage">/addRoomPage.jsp</result>
+			<result>/index.jsp</result>
+			<result name="input">/addRoomPage.jsp</result>
+		</action>
+    
+		<action name="LoginAction_*" class="loginAction" method="{1}">
+			<result name="loginPage">/loginPage.jsp</result>
+			<result>/index.jsp</result>
+			<result name="input">/loginPage.jsp</result>
+		</action>
+    
+    </package>
+
+</struts>
