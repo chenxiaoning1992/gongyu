@@ -82,15 +82,14 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 	}
 	
 	public String doFindEmployee(){
-//		String hql = "from Employee u where u.id like '%"+model.getId()+"%' and u.name like '%"+model.getName()+"%' and u.phone like '%"+model.getPhone()+"%' and u.department like '%"+model.getDepartment()+"%'";
-		String hql = "from Employee u where u.id like '%%' and u.name like '%%' and u.phone like '%%' and u.department like '%%'";
+		String hql = "from Employee u where u.id like '%"+model.getId()+"%' and u.name like '%"+model.getName()+"%' and u.phone like '%"+model.getPhone()+"%' and u.department like '%"+model.getDepartment()+"%'";
 		if(roomNumber == null || roomNumber.equals("")){
 			roomNumber = 9999999;
 		}
 		Room userRoom = roomService.getEntity(roomNumber);
 		List<Employee> employees = employeeService.findEntityByHQl(hql);
 		request.put("employees", employees);
-		System.out.println(employees.get(0));
+		System.out.println(employees.size());
 		return "employeeListPage";
 	}
 	public String doAddEmployee(){

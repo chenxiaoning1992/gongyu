@@ -20,7 +20,7 @@
         <property name="checkinTime" type="java.util.Date">
             <column name="CHECKIN_TIME" />
         </property>
-        <many-to-one name="room" class="model.Room">
+        <many-to-one name="room" class="model.Room" lazy="false">
             <column name="ROOM" />
         </many-to-one>
     </class>

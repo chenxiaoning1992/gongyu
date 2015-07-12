@@ -33,10 +33,9 @@
 					<td>${id }</td>
 					<td>${name }</td>
 					<td>${phone }</td>
-					<!-- 
 					<td>${department }</td>
 					<td>${checkinTime }</td>
-					<td>${room.id }</td> -->
+					<td>${room.id }</td>
 					<td>
 						<a href="" class="delete">删除</a>
 						<input type="hidden" value="${name }">
