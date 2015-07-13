@@ -80,29 +80,40 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 	public String toFindEmployeePage(){
 		return "findEmployeePage";
 	}
-	
+	/*
+	 * 查找员工
+	 */
 	public String doFindEmployee(){
-		String hql = "from Employee u where u.id like '%"+model.getId()+"%' and u.name like '%"+model.getName()+"%' and u.phone like '%"+model.getPhone()+"%' and u.department like '%"+model.getDepartment()+"%'";
+		String hql = null;
+		List<Employee> employees =null;
+		Room userRoom = null;
 		if(roomNumber == null || roomNumber.equals("")){
-			roomNumber = 9999999;
+			 hql = "from Employee u where u.name like '%"+model.getName()+"%' and u.phone like '%"+model.getPhone()+"%' and u.department like '%"+model.getDepartment()+"%'";
+			 employees = employeeService.findEntityByHQl(hql);
+			 employees = employeeService.findEntityByHQl(hql);
+		}else{
+			userRoom = roomService.getEntity(roomNumber);
+			hql = "from Employee u where u.name like '%"+model.getName()+"%' and u.phone like '%"+model.getPhone()+"%' and u.department like '%"+model.getDepartment()+"%' and u.room =?";
+			employees = employeeService.findEntityByHQl(hql,userRoom);
 		}
-		Room userRoom = roomService.getEntity(roomNumber);
-		List<Employee> employees = employeeService.findEntityByHQl(hql);
 		request.put("employees", employees);
 		System.out.println(employees.size());
 		return "employeeListPage";
 	}
+	/*
+	 * 添加员工
+	 */
 	public String doAddEmployee(){
 		model.setCheckinTime(new Date());
 		Room room = roomService.getEntity(roomNumber);
-		model.setId(222);
 		model.setRoom(room);
 		employeeService.saveEntity(model);
 		return SUCCESS;
 	}
-
+	
 	public void setRequest(Map<String, Object> arg0) {
 		this.request = arg0;
 	}
+	
 	
 }

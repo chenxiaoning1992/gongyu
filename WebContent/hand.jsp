@@ -38,7 +38,7 @@ text-decoration:none; font-size:12px;}
 
 	<div id="nav-menu">
 		<ul class="menu">
-			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>首页</span></a></h3></li>
+			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>房态</span></a></h3></li>
 			<li class="stmenu">
 				<h3><a href="#" class="xialaguang"><span>员工管理</span></a></h3>    
 				<ul class="children">    
@@ -50,6 +50,7 @@ text-decoration:none; font-size:12px;}
 				<h3><a href="#" class="xialaguang"><span>房间管理</span></a></h3>    
 				<ul class="children">    
 					<li><h3><a href="RoomAction_toAddRoomPage"><span>增加房间</span></a></h3></li>
+					<li><h3><a href="RoomAction_toFindRoomPage"><span>查询房间</span></a></h3></li>
 				</ul>
 			</li>
 			<li class="stmenu">
@@ -60,14 +61,14 @@ text-decoration:none; font-size:12px;}
 				</ul>
 			</li>
 			<li class="stmenu">
-				<h3><a href="#" class="xialaguang"><span>站长杂谈</span></a></h3>   
+				<h3><a href="#" class="xialaguang"><span>####</span></a></h3>   
 				<ul class="children">    
-					<li><h3><a href="#"><span>QQ个性签名</span></a></h3></li>
-					<li><h3><a href="#"><span>QQ留言代码</span></a></h3></li>
+					<li><h3><a href="#"><span>####</span></a></h3></li>
+					<li><h3><a href="#"><span>####</span></a></h3></li>
 				</ul>
 			</li>
-			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>设计欣赏</span></a></h3></li>
-			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>素材</span></a></h3></li>
+			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>####</span></a></h3></li>
+			<li class="stmenu"><h3><a href="#" class="xialaguang"><span>####</span></a></h3></li>
 		</ul>
 	</div>
 	

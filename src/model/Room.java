@@ -6,30 +6,26 @@ package model;
  */
 public class Room {
 	private Integer id;
-	private Integer floor;
-	private Integer roomType;
+	private String floor;
+	private String roomType;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getFloor() {
+	public String getFloor() {
 		return floor;
 	}
-	public void setFloor(Integer floor) {
+	public void setFloor(String floor) {
 		this.floor = floor;
 	}
-	
-	public Integer getRoomType() {
+	public String getRoomType() {
 		return roomType;
 	}
-	public void setRoomType(Integer roomType) {
+	public void setRoomType(String roomType) {
 		this.roomType = roomType;
 	}
-	@Override
-	public String toString() {
-		return "Room [id=" + id + ", floor=" + floor + ", roomType=" + roomType + "]";
-	}
+	
 	
 }

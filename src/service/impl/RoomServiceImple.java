@@ -27,4 +27,6 @@ public class RoomServiceImple extends BaseServiceImpl<Room>implements RoomServic
 		return !(ValidateUtil.isEmpty(room));
 	}
 
+
+
 }

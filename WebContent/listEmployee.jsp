@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>主页</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript"></script>
 </head>
 <body>
 	<center>
@@ -20,11 +22,12 @@
 		
 			<tr>
 				<td>编号</td>
-				<td>名字</td>
+				<td>姓名</td>
 				<td>手机号码</td>
 				<td>单位</td>
-				<td>入住日期</td>
+				<td>入住时间</td>
 				<td>房号</td>
+				<td>编辑</td>
 				<td>删除</td>
 			</tr>
 			<s:iterator value="#request.employees">
@@ -37,8 +40,12 @@
 					<td>${checkinTime }</td>
 					<td>${room.id }</td>
 					<td>
+						<a href="" class="delete">编辑</a>
+						<input type="hidden" value="${id }">
+					</td>
+					<td>
 						<a href="" class="delete">删除</a>
-						<input type="hidden" value="${name }">
+						<input type="hidden" value="${id }">
 					</td>
 					
 					

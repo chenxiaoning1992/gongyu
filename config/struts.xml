@@ -14,27 +14,29 @@
     <package name="default" namespace="/" extends="struts-default">
 	
 		<action name="UserAction_*" class="userAction" method="{1}">
-			<result name="addUserPage">/addUserPage.jsp</result>
+			<result name="addUserPage">/addUser.jsp</result>
 			<result>/index.jsp</result>
-			<result name="input">/addUserPage.jsp</result>
+			<result name="input">/addUser.jsp</result>
 		</action>
 		<action name="EmployeeAction_*" class="employeeAction" method="{1}">
-			<result name="addEmployeePage">/addEmployeePage.jsp</result>
-			<result name="findEmployeePage">/findEmployeePage.jsp</result>
-			<result name="employeeListPage">/employeeListPage.jsp</result>
+			<result name="addEmployeePage">/addEmployee.jsp</result>
+			<result name="findEmployeePage">/findEmployee.jsp</result>
+			<result name="employeeListPage">/listEmployee.jsp</result>
 			<result>/index.jsp</result>
-			<result name="input">/addEmployeePage.jsp</result>
+			<result name="input">/addEmployee.jsp</result>
 		</action>
 		<action name="RoomAction_*" class="roomAction" method="{1}">
-			<result name="addRoomPage">/addRoomPage.jsp</result>
+			<result name="addRoomPage">/addRoom.jsp</result>
+			<result name="toFindRoomPage">/findRoom.jsp</result>
+			<result name="listRoom">/listRoom.jsp</result>
 			<result>/index.jsp</result>
-			<result name="input">/addRoomPage.jsp</result>
+			<result name="input">/addRoom.jsp</result>
 		</action>
     
 		<action name="LoginAction_*" class="loginAction" method="{1}">
-			<result name="loginPage">/loginPage.jsp</result>
+			<result name="loginPage">/login.jsp</result>
 			<result>/index.jsp</result>
-			<result name="input">/loginPage.jsp</result>
+			<result name="input">/login.jsp</result>
 		</action>
     
     </package>

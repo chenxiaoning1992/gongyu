@@ -8,10 +8,10 @@
             <column name="ID" />
             <generator class="identity" />
         </id>
-        <property name="floor" type="java.lang.Integer">
+        <property name="floor" type="java.lang.String">
             <column name="FLOOR" />
         </property>
-        <property name="roomType" type="java.lang.Integer">
+        <property name="roomType" type="java.lang.String">
             <column name="ROOMTYPE" />
         </property>
     </class>
