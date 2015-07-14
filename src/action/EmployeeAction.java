@@ -1,5 +1,8 @@
 package action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +33,17 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 	RoomService roomService;
 	private Map<String, Object> request; 
 
+	private Integer EmployeeId;	
+	
+	private InputStream inputStream;
+	
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	public void setEmployeeId(Integer employeeId) {
+		EmployeeId = employeeId;
+	}
 
 
 	public Integer getRoomNumber() {
@@ -110,6 +124,27 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 		employeeService.saveEntity(model);
 		return SUCCESS;
 	}
+	/*
+	 * 
+	 * 
+	 */
+	
+	public  String doDeleteEmployee(){
+		 try {
+			 employeeService.deleteById(EmployeeId);
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		} catch (Exception e) {
+			try {
+				inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		return "delete";
+		
+	}
+	
 	
 	public void setRequest(Map<String, Object> arg0) {
 		this.request = arg0;

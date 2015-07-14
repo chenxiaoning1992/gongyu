@@ -11,9 +11,6 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 	
 	private BaseDAO<T> dao;
 	
-	
-
-
 	@Resource
 	public void setDao(BaseDAO<T> dao) {
 		this.dao = dao;

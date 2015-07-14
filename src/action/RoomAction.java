@@ -1,5 +1,8 @@
 package action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +26,20 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 	private RoomService roomService;
 	private Map<String, Object> request;
 
+	private Integer roomId;
 	
+	private InputStream inputStream;
+	
+	
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+	public void setRoomId(Integer roomId) {
+		this.roomId = roomId;
+	}
 	public void validateDoAddRoom(){
 		Integer id = model.getId();
 		if(roomService.isRegisted(id)){
@@ -65,6 +81,27 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 	public String toFindRoomPage(){
 		return "toFindRoomPage";
 	}
+	
+	/*
+	 * 删除房间
+	 */
+	public String doDeleteRoom(){
+		String hql = "delete from Room r where r.id = ?";
+		 try {
+			 System.out.println(roomId);
+			 roomService.batchEntityByHQL(hql, roomId);
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		} catch (Exception e) {
+			try {
+				inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		return "delete";
+	}
+	
 	@Override
 	public void setRequest(Map<String, Object> arg0) {
 		this.request = arg0;

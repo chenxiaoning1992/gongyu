@@ -8,7 +8,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>主页</title>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击删除时的确认窗口
+		$(".delete").click(function(){
+			var name = $(this).next(":hidden").val();
+			var flag = confirm("确定要删除" + name + "的信息么?");
+			if(flag){
+				var $tr = $(this).parent().parent();
+				var url = this.href;
+				$.post(url,function(data){
+					if(data = 1){
+						alert("删除成功!");
+						$tr.remove();
+					}else{
+						alert("删除失败");
+					}
+				});
+			}
+			return false;
+		});
+	})
+</script>
 </head>
 <body>
 	<center>
@@ -40,12 +61,12 @@
 					<td>${checkinTime }</td>
 					<td>${room.id }</td>
 					<td>
-						<a href="" class="delete">编辑</a>
+						<a href="" class="edit">编辑</a>
 						<input type="hidden" value="${id }">
 					</td>
 					<td>
-						<a href="" class="delete">删除</a>
-						<input type="hidden" value="${id }">
+						<a href="EmployeeAction_doDeleteEmployee?employeeId=${id }" class="delete">删除</a>
+						<input type="hidden" value="${name }">
 					</td>
 					
 					
