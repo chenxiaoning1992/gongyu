@@ -56,7 +56,7 @@
 				<tr>
 					<td>房号:</td>
 					<td>
-						<s:textfield name="roomNumber" ></s:textfield>
+						<s:textfield name="room.id" ></s:textfield>
 						<font>
 						<s:fielderror>
 							<s:param>room</s:param>

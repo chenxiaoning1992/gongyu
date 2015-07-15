@@ -26,6 +26,10 @@ public class Room {
 	public void setRoomType(String roomType) {
 		this.roomType = roomType;
 	}
+	@Override
+	public String toString() {
+		return "Room [id=" + id + ", floor=" + floor + ", roomType=" + roomType + "]";
+	}
 	
 	
 }

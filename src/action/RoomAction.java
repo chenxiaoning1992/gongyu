@@ -75,7 +75,6 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 		}
 		rooms = roomService.findEntityByHQl(hql);
 		request.put("rooms", rooms);
-		System.out.println(hql);
 		return "listRoom";
 	}
 	public String toFindRoomPage(){
@@ -88,7 +87,6 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 	public String doDeleteRoom(){
 		String hql = "delete from Room h where h.id = ?";
 		 try {
-			 System.out.println(roomId);
 			 roomService.batchEntityByHQL(hql, roomId);
 			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
 		} catch (Exception e) {

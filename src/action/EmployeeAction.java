@@ -119,8 +119,6 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 	 */
 	public String doAddEmployee(){
 		model.setCheckinTime(new Date());
-		Room room = roomService.getEntity(roomNumber);
-		model.setRoom(room);
 		employeeService.saveEntity(model);
 		return SUCCESS;
 	}
