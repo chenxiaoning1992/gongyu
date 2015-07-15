@@ -125,7 +125,7 @@ public class EmployeeAction extends BaseAction<Employee> implements RequestAware
 		return SUCCESS;
 	}
 	/*
-	 * 
+	 * 删除员工
 	 * 
 	 */
 	

@@ -18,11 +18,11 @@
 				var $tr = $(this).parent().parent();
 				var url = this.href;
 				$.post(url,function(data){
-					if(data = 1){
+					if(data == "1"){
 						alert("删除成功!");
 						$tr.remove();
 					}else{
-						alert("删除失败");
+						alert("删除失败!");
 					}
 				});
 			}

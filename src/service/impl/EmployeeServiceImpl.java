@@ -16,7 +16,6 @@ public class EmployeeServiceImpl extends BaseServiceImpl<Employee> implements Em
 	
 	public void deleteById(Integer id){
 		String hql = "delete from Employee e where e.id = ?";
-		System.out.println(id);
 		this.batchEntityByHQL(hql, id);
 	}
 }

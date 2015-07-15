@@ -86,7 +86,7 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 	 * 删除房间
 	 */
 	public String doDeleteRoom(){
-		String hql = "delete from Room r where r.id = ?";
+		String hql = "delete from Room h where h.id = ?";
 		 try {
 			 System.out.println(roomId);
 			 roomService.batchEntityByHQL(hql, roomId);
@@ -100,6 +100,22 @@ public class RoomAction extends BaseAction<Room> implements RequestAware{
 			e.printStackTrace();
 		}
 		return "delete";
+	}
+	
+	/*
+	 * 传送到编辑房间页面
+	 */
+	
+	public String toEditRoomPage(){
+		return "toEditRoomPage";
+	}
+	/*
+	 * 更新房间信息
+	 */
+	
+	public String doUpdateRoom(){
+		return null;
+		
 	}
 	
 	@Override
